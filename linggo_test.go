@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func Test_main(t *testing.T)  {
+func Test_Tr(t *testing.T)  {
 	id := "halo dunia"
 	en := "hello world"
 
