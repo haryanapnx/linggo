@@ -1,6 +1,6 @@
 # Linggo v1.0.0
 
-Ini adalah module bahasa pemrograman go sederhana untuk mengkonfigurasikan tampilan 
+Ini adalah package bahasa pemrograman go sederhana untuk mengkonfigurasikan tampilan 
 pesan ke dalam multi bahasa.
 
 ### func Tr()
