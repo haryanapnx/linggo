@@ -11,7 +11,7 @@ func Test_main(t *testing.T)  {
 	en := "hello world"
 
 	// tes bahasa indonesia
-	message, err := goLingual("id", "hello world")
+	message, err := Tr("id", "hello world")
 	errorHandler(err)
 
 	if message != id {
@@ -19,7 +19,7 @@ func Test_main(t *testing.T)  {
 	}
 
 	// English test
-	message, err = goLingual("en", "hello world")
+	message, err = Tr("en", "hello world")
 	errorHandler(err)
 
 	if message != en {

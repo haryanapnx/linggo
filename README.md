@@ -6,4 +6,7 @@ pesan ke dalam multi bahasa.
 #### instalasi
 go get github.com/michaelwp/linggo
 
+#### cara penggunaan
+
+
 #### contoh
