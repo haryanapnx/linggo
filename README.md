@@ -1,13 +1,18 @@
-# go-lingual v1.0.0
+# Linggo v1.0.0
 
 Ini adalah module bahasa pemrograman go sederhana untuk mengkonfigurasikan tampilan 
 pesan ke dalam multi bahasa.
 
-### instalasi
+### func Tr()
+```go
+func Tr(file string, key string) (message interface{}, err error)
+```
+
+### Instalasi
 `go get github.com/michaelwp/linggo` atau
 `go get github.com/michaelwp/linggo@v1.0.0`
 
-### contoh penggunaan
+### Contoh penggunaan
 A. Buat Json file untuk menampung bahasa yang digunakan
 - id.json (bahasa Indonesia)
 ```json 
@@ -33,7 +38,7 @@ A. Buat Json file untuk menampung bahasa yang digunakan
       "hello world": "你好，世界"
     }
 ```
-B. import file ke dalam golang file
+B. import file ke dalam go file
 - main.go
 ```go 
     package main
@@ -54,7 +59,7 @@ B. import file ke dalam golang file
         log.Println(msg)
     }
 ```
-#### hasil
+#### Hasil
 ```text
     你好，世界
 ```
