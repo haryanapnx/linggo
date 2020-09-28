@@ -1,4 +1,4 @@
-package linggo
+package v1
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ func Test_Tr(t *testing.T)  {
 	en := "hello world"
 
 	// tes bahasa indonesia
-	message, err := Tr("id", "hello world")
+	message, err := Tr("../id", "hello world")
 	errorHandler(err)
 
 	if message != id {
@@ -19,7 +19,7 @@ func Test_Tr(t *testing.T)  {
 	}
 
 	// English test
-	message, err = Tr("en", "hello world")
+	message, err = Tr("../en", "hello world")
 	errorHandler(err)
 
 	if message != en {
