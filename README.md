@@ -1,4 +1,4 @@
-# Linggo v1.1.0
+# Linggo v1.1.1
 
 Ini adalah package bahasa pemrograman go sederhana untuk mengkonfigurasikan tampilan 
 pesan ke dalam multi bahasa.
@@ -9,7 +9,7 @@ func Tr(file string, key string) (message interface{}, err error)
 ```
 ### func Set()
 ```go
-func Set(file string) (jsonFile JFile)
+func Set(file string) (jsonFile JFile, err error)
 ```
 ### func Ts()
 ```go
@@ -18,7 +18,7 @@ func (f JFile) Ts(key string) (message interface{})
 
 ### Instalasi
 `go get github.com/michaelwp/linggo` atau
-`go get github.com/michaelwp/linggo@v1.0.0`
+`go get github.com/michaelwp/linggo@v1.0.1`
 
 ### Contoh penggunaan
 A. Buat Json file untuk menampung bahasa yang digunakan
@@ -85,7 +85,7 @@ import (
 )
 
 // load json file (bahasa indonesia/ id.json)
-var f = linggo.Set("id")
+var f, _ = linggo.Set("id")
 
 func main() {
     welcome := f.Ts("welcome")
