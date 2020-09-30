@@ -85,7 +85,7 @@ import (
 )
 
 // load json file (bahasa indonesia/ id.json)
-var f = Set("id")
+var f = linggo.Set("id")
 
 func main() {
     welcome := f.Ts("welcome")
