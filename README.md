@@ -18,7 +18,7 @@ func (f JFile) Ts(key string) (message interface{})
 
 ### Instalasi
 `go get github.com/michaelwp/linggo` atau
-`go get github.com/michaelwp/linggo@v1.0.0`
+`go get github.com/michaelwp/linggo@v1.1.0`
 
 ### Contoh penggunaan
 A. Buat Json file untuk menampung bahasa yang digunakan
