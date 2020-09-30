@@ -11,7 +11,7 @@ func Test_Tr(t *testing.T)  {
 	en := "hello world"
 
 	// tes bahasa indonesia
-	message, err := Tr("../id", "hello world")
+	message, err := Tr("id", "hello world")
 	errorHandler(err)
 
 	if message != id {
@@ -19,10 +19,26 @@ func Test_Tr(t *testing.T)  {
 	}
 
 	// English test
-	message, err = Tr("../en", "hello world")
+	message, err = Tr("en", "hello world")
 	errorHandler(err)
 
 	if message != en {
 		log.Fatal(fmt.Sprintf("the expected result \"hello world\", but the result got: %v", message))
+	}
+}
+
+// load file json bahasa indonesia
+var f = Set("id")
+
+func Test_Set(t *testing.T) {
+	welcome := f.Ts("welcome")
+	please := f.Ts("please")
+
+	if welcome != "selamat datang" {
+		log.Fatal(fmt.Sprintf("hasil yang diharapkan \"selamat datang\", tapi hasil yang didapatkan: %v", welcome))
+	}
+
+	if please != "silahkan" {
+		log.Fatal(fmt.Sprintf("hasil yang diharapkan \"silahkan\", tapi hasil yang didapatkan: %v", please))
 	}
 }

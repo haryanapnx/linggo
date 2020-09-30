@@ -7,6 +7,36 @@ import (
 	"os"
 )
 
+type JFile string
+
+func Set(file string) (jsonFile JFile) {
+	// add extension json to file name
+	jsonFile = JFile(file + ".json")
+	return jsonFile
+}
+
+func (f JFile) Ts(key string) (message interface{}) {
+	// Open our jsonFile
+	jsonFile, err := os.Open(string(f))
+	errorHandler(err)
+
+	// read the byte
+	jsonByte, err := ioutil.ReadAll(jsonFile)
+	errorHandler(err)
+
+	// set the result interface
+	var result map[string]interface{}
+
+	// unmarshal the byte to interface
+	err = json.Unmarshal(jsonByte, &result)
+
+	// set the message result
+	message = result[key]
+
+	// return the result message
+	return message
+}
+
 func Tr(file string, key string) (message interface{},  err error){
 	// Open our jsonFile
 	jsonFile, err := os.Open(file + ".json")
