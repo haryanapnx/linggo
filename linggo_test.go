@@ -28,7 +28,7 @@ func Test_Tr(t *testing.T)  {
 }
 
 // load file json bahasa indonesia
-var f = Set("id")
+var f, _ = Set("id")
 
 func Test_Set(t *testing.T) {
 	welcome := f.Ts("welcome")

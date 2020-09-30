@@ -9,14 +9,19 @@ import (
 
 type JFile string
 
-func Set(file string) (jsonFile JFile) {
+func Set(file string) (jsonFile JFile, err error) {
 	// add extension json to file name
 	jsonFile = JFile(file + ".json")
-	return jsonFile
+
+	// Open the jsonFile
+	_, err = os.Open(string(jsonFile))
+	errorHandler(err)
+
+	return jsonFile, err
 }
 
 func (f JFile) Ts(key string) (message interface{}) {
-	// Open our jsonFile
+	// Open the jsonFile
 	jsonFile, err := os.Open(string(f))
 	errorHandler(err)
 
@@ -38,7 +43,7 @@ func (f JFile) Ts(key string) (message interface{}) {
 }
 
 func Tr(file string, key string) (message interface{},  err error){
-	// Open our jsonFile
+	// Open the jsonFile
 	jsonFile, err := os.Open(file + ".json")
 	errorHandler(err)
 
