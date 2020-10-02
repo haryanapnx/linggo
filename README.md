@@ -1,7 +1,6 @@
 # Linggo v1.1.1
 
-Ini adalah package bahasa pemrograman go sederhana untuk mengkonfigurasikan tampilan 
-pesan ke dalam multi bahasa.
+This is a simple go library for configuring displays messages into multi languages.
 
 ### func Tr()
 ```go
@@ -16,13 +15,13 @@ func Set(file string) (jsonFile JFile, err error)
 func (f JFile) Ts(key string) (message interface{})
 ```
 
-### Instalasi
+### Installation
 `go get github.com/michaelwp/linggo` atau
 `go get github.com/michaelwp/linggo@v1.1.1`
 
-### Contoh penggunaan
-A. Buat Json file untuk menampung bahasa yang digunakan
-- id.json (bahasa Indonesia)
+### Example
+A. Create a Json file that contain the language used.
+- id.json (Indonesia)
 ```json 
 {
   "hello world": "halo dunia",
@@ -30,25 +29,25 @@ A. Buat Json file untuk menampung bahasa yang digunakan
   "please": "silahkan"
 }
 ```
-- en.json (bahasa Inggris)
+- en.json (English)
 ```json 
 {
   "hello world": "hello world"
 }
 ```
-- fr.json (bahasa Prancis)
+- fr.json (French)
 ```json 
 {
   "hello world": "Bonjour le monde"
 }
 ```
-- en.json (bahasa China)
+- cn.json (Chinese)
 ```json 
 {
   "hello world": "你好，世界"
 }
 ```
-B. memanggil file json setiap kali proses translate
+B. Call the json file in the first linggo.Tr() parameter.
 
 ```go 
 package main
@@ -59,22 +58,22 @@ import (
 )
 
 func main(){
-    // contoh translate ke dalam bahasa China
+    // example translation into Chinese
     msg, err := linggo.Tr("ch", "hello world")
-    // handle error (disarankan untuk menghandle error dengan cara yang lebih baik)
+    // handle errors (recommended to handle errors in a better way)
     if err != nil {
         log.Fatal(err)
     }
-    // menampilkan hasil ke layar
+    // log the result
     log.Println(msg)
 }
 ```
-#### Hasil
+#### Result
 ```text
 你好，世界
 ```
 
-C. memanggil file json hanya sekali diawal.
+C. Init json configuration globally.
 
 ```go 
 package main
@@ -84,7 +83,7 @@ import (
     "log"
 )
 
-// load json file (bahasa indonesia/ id.json)
+// load json file (Indonesia / id.json)
 var f, _ = linggo.Set("id")
 
 func main() {
@@ -95,7 +94,7 @@ func main() {
     log.Println(please)
 }
 ```
-#### Hasil
+#### Result
 ```text
 selamat datang
 silahkan
